@@ -29,14 +29,27 @@ public class CamparatorLambda {
 		for (TestData testData : listTestData) {
 			System.out.println("testData--> " + testData);
 		}
-		
+
+		System.out.println("\nSort on the bases of Age");
+
 		System.out.println("After Sort");
+		// lambda here! Sort on the bases of Age
+		listTestData.sort((TestData test1, TestData test2) -> test1.getAge() - test2.getAge());
+		// java 8 only, lambda also, to print the List
+		listTestData.forEach(testdata -> System.out.println(testdata));
+
+		System.out.println("\nSort on the bases of Salary");
+		// lambda here! Sort on the bases of Salary
+		listTestData.sort((TestData test1, TestData test2) -> test1.getSalary().compareTo(test2.getSalary()));
+		// java 8 only, lambda also, to print the List
+		listTestData.forEach(testdata -> System.out.println(testdata));
 		
-		//lambda here!
-		listTestData.sort((TestData test1, TestData test2)-> test1.getAge() - test2.getAge());
+		System.out.println("\nSort on the bases of Name");
+		// lambda here! Sort on the bases of Name
+		listTestData.sort((TestData test1, TestData test2) -> test1.getName().compareTo(test2.getName()));
+		// java 8 only, lambda also, to print the List
+		listTestData.forEach(testdata -> System.out.println(testdata));
 		
-		//java 8 only, lambda also, to print the List
-		listTestData.forEach(testdata-> System.out.println(testdata));
 
 	} // ends: main()
 
